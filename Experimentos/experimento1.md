@@ -12,4 +12,4 @@
 
 ## 📁 Relatório
 - O fitness dos indivíduos permaneceu estável ao longo de cada geração.
-- Indica que as mutações aleatorias não causaram grandes variações ao longo das 10 gerações.
+- Indica que as mutações aleatorias não causaram grandes variações ao longo das 11 gerações.
