@@ -26,5 +26,5 @@ TNo* selecao_pais(TSDoubleList *lista){
         }
         pai = pai->prox;
     }
-    return lista->fim; //lista->inicio; 
+    return lista->fim;
 }

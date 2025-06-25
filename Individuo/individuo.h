@@ -36,7 +36,7 @@ void individuo_aleatorio(TGenotipo* );
  * @param mapa Ponteiro para a estrutura Labirinto;
  * @param Stack* ponteiro para a pilha.
  */
-void individuo_inteligente(TGenotipo* , Labirinto* , Stack* );
+void individuo_inteligente(TGenotipo* , Labirinto* , Stack*);
 
 /**
  * Verifica se os movimentos são invalidos.
@@ -51,7 +51,6 @@ bool movimento_invalido(int , int , Labirinto* );
  * Verifica se os movimentos são invalidos;
  * @param int linha;
  * @param int coluna;
- * @param int cont;
  * @param mapa Ponteiro para a estrutura Labirinto;
  * @return bool informando o status da operação.
  */

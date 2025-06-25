@@ -7,7 +7,7 @@
 
 double calcular_fitness(Labirinto *mapa, TGenotipo *genotipo, Posicao *pos){
 
-    double fitness = 1000.0;
+    double fitness = 100.0;
 
     // Distância de Manhattan
     double distancia = abs(pos->linha - mapa->final.linha) + abs(pos->coluna - mapa->final.coluna);
@@ -15,10 +15,10 @@ double calcular_fitness(Labirinto *mapa, TGenotipo *genotipo, Posicao *pos){
 
     Posicao aux;
     int colisoes = simular_caminho(mapa, genotipo, &aux);
-    fitness -= colisoes * 50;
+    fitness -= colisoes * 5;
 
     if (aux.linha != mapa->final.linha || aux.coluna != mapa->final.coluna) {
-        fitness -= 100;
+        fitness -= 10;
     }
 
     if (fitness < 0) {

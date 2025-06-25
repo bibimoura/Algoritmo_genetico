@@ -26,34 +26,25 @@ TNo *TNo_createNFill(TGenotipo *genotipo){
 
 
 bool list_insert(TSDoubleList *lista, TGenotipo *genotipo){
-    if (lista == NULL)
-        return false;
+    if (lista == NULL) return false;
 
     TNo *aux = TNo_createNFill(genotipo);
-    if (aux == NULL)
-        return false;
+    if (aux == NULL) return false;
 
     // Lista vazia ?
     if (lista->inicio == NULL && lista->fim == NULL){
         lista->inicio = aux;
         lista->fim = aux;
-    }
-    // Inserção no início.
-    else if (aux->genotipo.fitness <= lista->inicio->genotipo.fitness){
+    } else if (aux->genotipo.fitness <= lista->inicio->genotipo.fitness){
         aux->prox = lista->inicio;
         lista->inicio->anterior = aux;
         lista->inicio = aux;
-    }
-    // Inserção no final
-    else if (aux->genotipo.fitness >= lista->fim->genotipo.fitness){
+    }else if (aux->genotipo.fitness >= lista->fim->genotipo.fitness){
 
         lista->fim->prox = aux;
         aux->anterior = lista->fim;
         lista->fim = aux;
-    }
-    // Inserção no meio
-    else
-    {
+    }else{
         TNo *novo = lista->inicio;
         while (novo != NULL && aux->genotipo.fitness > novo->genotipo.fitness) {
             novo = novo->prox; 
@@ -63,9 +54,8 @@ bool list_insert(TSDoubleList *lista, TGenotipo *genotipo){
         novo->anterior->prox = aux;
         novo->anterior = aux;
     }
-
     lista->totalIndividuos++;
-    return true;
+     return true;
 }
 
 

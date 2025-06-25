@@ -11,7 +11,6 @@ struct _stack{
     int index;
 };
 
-
 /**
  * Cria instâncias de pilhas;
  * @param unsigned int Tamanho fixo da pilha;

@@ -6,8 +6,9 @@
 #include <string.h>
 #include <stdbool.h>
 
-bool populacao_create(TSDoubleList *lista, Labirinto *mapa, Stack *pilha, char *tipo_geracao, int tam_populacao, int max_movimentos) {
-    
+bool populacao_create(TSDoubleList *lista, Labirinto *mapa, Stack *pilha,
+     char *tipo_geracao, int tam_populacao, int max_movimentos) {
+
     for (int i = 0; i < tam_populacao; i++) {
         TGenotipo *aux = TGenotipo_create(max_movimentos);
         if (aux == NULL) return false;
@@ -17,7 +18,6 @@ bool populacao_create(TSDoubleList *lista, Labirinto *mapa, Stack *pilha, char *
         } else {
             individuo_inteligente(aux, mapa, pilha);
         }
-
         Posicao posicao_final;
         int colisoes = simular_caminho(mapa, aux, &posicao_final);
         aux->posicao = posicao_final;
@@ -28,6 +28,7 @@ bool populacao_create(TSDoubleList *lista, Labirinto *mapa, Stack *pilha, char *
 
     return true;
 }
+
  void populacao_print(TSDoubleList *lista){
     TNo *aux = lista->inicio;
     int i = 0;
